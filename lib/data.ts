@@ -2,7 +2,7 @@ import React from "react";
 
 import Hirely from "@/public/Hirely.png";
 import Car2nds from "@/public/Car2nds.png";
-import ProAdventure from "@/public/proAdventure.png"; 
+import ProAdventure from "@/public/ProAdventure.png"; 
 
 export const links = [
   {
