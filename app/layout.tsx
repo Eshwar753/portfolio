@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Urbanist } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "react-hot-toast";
+import Footer from "@/components/footer";
+import { ActiveSectionContextProvider } from "@/context/ActiveSectionContext";
 
-const inter = Inter({ subsets: ["latin"] });
+const urbanist = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +20,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="!scroll-smooth">
+      <body
+        className={`${urbanist.className} relative 
+       from-black to-slate-900 
+       dark:bg-black bg-white  dark:bg-grid-white/[0.05] bg-grid-white-black/[0.1]
+       pt-28 sm:pt-36`}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <ActiveSectionContextProvider>
+            <Header />
+            {children}
+            <Toaster />
+            <Footer />
+          </ActiveSectionContextProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
+
+// from-[#09203F] to-[#537895]
