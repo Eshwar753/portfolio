@@ -6,6 +6,7 @@ import { projectsData } from "@/lib/data";
 import Project from "./Project";
 import { useActiveSectionContext } from "@/context/ActiveSectionContext";
 import { useInView } from "react-intersection-observer";
+import toast from "react-hot-toast";
 
 const Projects = () => {
 
@@ -23,6 +24,7 @@ const Projects = () => {
       <SectionHeading>Some things I've Build</SectionHeading>
 
       <div>
+        <p>⚠️ In case the server is inactive for long time, it may take 20-50 seconds to load the demo, please bare with it ⚠️</p>
         {projectsData.map((project, index) => (
           <div key={index}>
             <Project {...project}  />

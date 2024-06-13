@@ -69,7 +69,7 @@ const {activeSection, setActiveSection, setTimeOfLastClick} = useActiveSectionCo
         </ul>
       </nav>
 
-      <motion.div className="flex fixed h-12 right-1/4 top-8 scroll-m-[20rem]"
+      <motion.div className="lg:flex fixed h-12 right-1/4 top-8 scroll-m-[20rem] hidden"
        initial={{ opacity: 0, scale: 0 }}
        animate={{ opacity: 1, scale: 1 }}
        transition={{
